@@ -12,6 +12,11 @@ class Pilot extends React.Component {
             ViewState: "DISPLAY"
         }
 
+        if (window.localStorage.getItem("pilots") === null) {
+            let data = { [this.props.ID]: {Name: this.props.Name} };
+            window.localStorage.setItem("pilots", JSON.stringify(data));
+        }
+
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleSaveClick = this.handleSaveClick.bind(this);
@@ -33,13 +38,18 @@ class Pilot extends React.Component {
     }
 
     handleCancel() {
-        this.setState({
-            ViewState: "DISPLAY"
-        });
+        console.log(window.localStorage.getItem("pilots"));
+        // let pilots = JSON.parse(window.localStorage.getItem("pilots"));
+        // this.setState({
+        //     Data: pilots[this.props.ID],
+        //     ViewState: "DISPLAY"
+        // });
     }
 
     handleSaveClick() {
-        console.log(this.state);
+        let pilots = JSON.parse(window.localStorage.getItem("pilots"));
+        pilots[this.props.ID] = this.state.Data;
+        window.localStorage.setItem("pilots", JSON.stringify(pilots));
         this.setState({
             ViewState: "DISPLAY"
         });

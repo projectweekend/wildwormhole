@@ -23,7 +23,7 @@ function App() {
                 </div>
             </div>
             <div className="row">
-                <Pilot Name="cloggin"></Pilot>
+                <Pilot ID="1" Name="cloggin"></Pilot>
             </div>
         </div>
     );
