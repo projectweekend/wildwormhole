@@ -11,14 +11,15 @@ class Deck extends React.Component {
 
     render() {
         return (
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 <Card.Body>
                     <Card.Title>{this.state.Name}</Card.Title>
-                    <Card.Subtitle>{this.state.House1} | {this.state.House2} | {this.state.House3}</Card.Subtitle>
+                    <Card.Subtitle>AERC: {this.state.Ratings.AERC} | Cards: {this.state.Ratings.Cards} | SAS: {this.state.Ratings.SAS}</Card.Subtitle>
+                    <br></br>
                     <ListGroup variant="flush">
-                        <ListGroup.Item>AERC: {this.state.Ratings.AERC}</ListGroup.Item>
-                        <ListGroup.Item>Cards: {this.state.Ratings.Cards}</ListGroup.Item>
-                        <ListGroup.Item>SAS: {this.state.Ratings.SAS}</ListGroup.Item>
+                        <ListGroup.Item>{this.state.House1}</ListGroup.Item>
+                        <ListGroup.Item>{this.state.House2}</ListGroup.Item>
+                        <ListGroup.Item>{this.state.House3}</ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
             </Card>
