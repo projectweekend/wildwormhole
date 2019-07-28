@@ -18,7 +18,6 @@ class Deck extends React.Component {
                     <ListGroup variant="flush">
                         <ListGroup.Item>AERC: {this.state.Ratings.AERC}</ListGroup.Item>
                         <ListGroup.Item>Cards: {this.state.Ratings.Cards}</ListGroup.Item>
-                        <ListGroup.Item>Consistency: {this.state.Ratings.Consistency}</ListGroup.Item>
                         <ListGroup.Item>SAS: {this.state.Ratings.SAS}</ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
